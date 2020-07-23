@@ -1,0 +1,28 @@
+npm install -g expo-cli
+intall expo client pada android ataui ios
+
+
+gunakan VSCode
+
+	install plugin "react native" pada VSCode
+ 	- React Native Tools
+ 	- React Native/Redux
+	install plugin "pretier"
+	install plugin "material icon theme"
+
+CTRL + kemudian ketik "formatonsave" kemudian centang save
+
+Membuat projet Expot "expo init NamaProjet" -> pilih BLANK (--tempalte blank )
+
+jika sudah klik npm start
+
+
+
+(untuk melihat detail device) install : npm i expo-constants 
+
+
+(untuk gestur swipe handle) install : expo install react-native-gesture-handler
+
+(untuk form keren ) intall : npm install formil@2.1.4
+
+(untuk validation) install : npm install yup
