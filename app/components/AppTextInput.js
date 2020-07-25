@@ -28,7 +28,7 @@ export default function AppTextInput({ icon, icon2, onPress, ...otherProps }) {
         <MaterialCommunityIcons
           name={icon2}
           size={25}
-          color={defaultStyles.colors.primary}
+          color={defaultStyles.colors.medium}
           style={styles.icon2}
           onPress={onPress}
         />
@@ -42,7 +42,6 @@ const styles = StyleSheet.create({
     backgroundColor: defaultStyles.colors.light,
     flexDirection: "row",
     borderRadius: 25,
-    borderColor: "red",
     width: "100%",
     padding: 15,
     marginVertical: 15,

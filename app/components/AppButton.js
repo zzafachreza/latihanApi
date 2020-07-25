@@ -1,14 +1,42 @@
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import colors from "../config/colors";
+import { MaterialCommunityIcons, Octicons } from "@expo/vector-icons";
 
-export default function AppButton({ title, onPress, color = "primary" }) {
+export default function AppButton({
+  title,
+  onPress,
+  color = "primary",
+  icon,
+  height,
+  Fontcolor = "white",
+  fontSize = 20,
+  borderStyle,
+  borderWidth,
+  borderColor,
+  borderRadius = 25,
+}) {
   return (
     <TouchableOpacity
-      style={[styles.button, { backgroundColor: colors[color] }]}
+      style={[
+        styles.button,
+        {
+          backgroundColor: colors[color],
+          height: height,
+          borderRadius: borderRadius,
+          borderWidth: borderWidth,
+          borderStyle: borderStyle,
+          borderColor: colors[Fontcolor],
+        },
+      ]}
       onPress={onPress}
     >
-      <Text style={styles.text}>{title}</Text>
+      <MaterialCommunityIcons name={icon} size={20} color={colors[Fontcolor]} />
+      <Text
+        style={[styles.text, { fontSize: fontSize, color: colors[Fontcolor] }]}
+      >
+        {title}
+      </Text>
     </TouchableOpacity>
   );
 }
@@ -16,16 +44,14 @@ export default function AppButton({ title, onPress, color = "primary" }) {
 const styles = StyleSheet.create({
   button: {
     width: "100%",
-    backgroundColor: colors.primary,
     padding: 15,
     justifyContent: "center",
     alignItems: "center",
-    borderRadius: 25,
     marginVertical: 10,
+    flexDirection: "row",
   },
   text: {
-    color: colors.white,
-    fontSize: 20,
+    marginLeft: 20,
     textTransform: "uppercase",
     fontWeight: "bold",
   },

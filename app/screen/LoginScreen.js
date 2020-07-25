@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View, Image, ScrollView } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  ScrollView,
+  ImageBackground,
+} from "react-native";
 import Screen from "../components/Screen";
 import AppTextInput from "../components/AppTextInput";
 import AppButton from "../components/AppButton";
@@ -65,7 +72,11 @@ export default function LoginScreen() {
             textContentType="password"
           />
 
-          <AppButton title="Login" onPress={() => alert(email + password)} />
+          <AppButton
+            icon="login"
+            title="Login"
+            onPress={() => alert(email + password)}
+          />
         </View>
       </ScrollView>
     </Screen>
@@ -80,7 +91,9 @@ const styles = StyleSheet.create({
     marginTop: 50,
     marginBottom: 50,
   },
-  scrollview: {
-    backgroundColor: colors.secondary,
+  scrollview: {},
+  background: {
+    justifyContent: "flex-end",
+    alignItems: "center",
   },
 });

@@ -14,8 +14,12 @@ export default function WelcomeScreen() {
         <Text style={styles.tagLine}>Sell What you Don't Need</Text>
       </View>
       <View style={styles.buttonsContainer}>
-        <AppButton title="LOGIN" />
-        <AppButton title="REGISTER" color="secondary" />
+        <AppButton title="LOGIN" icon="login" />
+        <AppButton
+          title="REGISTER"
+          color="secondary"
+          icon="book-open-page-variant"
+        />
       </View>
     </ImageBackground>
   );
@@ -44,5 +48,6 @@ const styles = StyleSheet.create({
   buttonsContainer: {
     padding: 20,
     width: "100%",
+    marginVertical: 70,
   },
 });

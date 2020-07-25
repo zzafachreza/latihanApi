@@ -21,5 +21,5 @@ import AppPicker from "./app/components/AppPicker";
 import LoginScreen from "./app/screen/LoginScreen";
 
 export default function App() {
-  return <LoginScreen />;
+  return <ListingScreen />;
 }
