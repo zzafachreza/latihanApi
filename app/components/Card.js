@@ -8,7 +8,6 @@ import {
 
 import Text from "./Text";
 import colors from "../config/colors";
-import AppButton from "./Button";
 
 function Card({ title, subTitle, imageUrl, onPress }) {
   return (
@@ -23,15 +22,6 @@ function Card({ title, subTitle, imageUrl, onPress }) {
             {subTitle}
           </Text>
         </View>
-        <View style={styles.buttonContainer}>
-          <AppButton
-            fontSize={15}
-            sizeIcon={15}
-            borderRadius={10}
-            title="ADD TO CART"
-            icon="cart-plus"
-          />
-        </View>
       </View>
     </TouchableWithoutFeedback>
   );
@@ -43,8 +33,6 @@ const styles = StyleSheet.create({
     backgroundColor: colors.white,
     marginBottom: 20,
     overflow: "hidden",
-    flex: 1,
-    marginHorizontal: 5,
   },
   detailsContainer: {
     padding: 20,
@@ -60,7 +48,6 @@ const styles = StyleSheet.create({
   title: {
     marginBottom: 7,
   },
-  buttonContainer: {},
 });
 
 export default Card;

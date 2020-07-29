@@ -3,35 +3,40 @@ import { FlatList, StyleSheet } from "react-native";
 
 import Card from "../components/Card";
 import colors from "../config/colors";
-
-import listingsApi from "../api/listings";
 import routes from "../navigation/routes";
 import Screen from "../components/Screen";
+import Button from "../components/Button";
+import ActivityIndicator from "../components/ActivityIndicator";
+
+import apiListings from "../api/listings";
+import AppText from "../components/Text";
+import useApi from "../hooks/useApi";
 
 function ListingsScreen({ navigation }) {
-  const [listings, setListings] = useState([]);
+  const getListingsApi = useApi(apiListings.getListings);
 
   useEffect(() => {
-    loadListings();
+    getListingsApi.request(1, 2, 3);
   }, []);
 
-  const loadListings = async () => {
-    const response = await listingsApi.getListings();
-    setListings(response.data);
-  };
-
-  console.log(listingsApi.getListings());
   return (
     <Screen style={styles.screen}>
+      {getListingsApi.error && (
+        <>
+          <AppText>Couldn't connect to server</AppText>
+          <Button title="Try Again" onPress={loadListings} />
+        </>
+      )}
+
+      <ActivityIndicator visible={getListingsApi.loading} />
       <FlatList
-        numColumns="2"
-        data={listings}
+        data={getListingsApi.data}
         keyExtractor={(listing) => listing.id.toString()}
         renderItem={({ item }) => (
           <Card
             title={item.title}
-            subTitle={item.price}
-            imageUrl={item.image}
+            subTitle={"$" + item.price}
+            imageUrl={item.images[0].url}
             onPress={() => navigation.navigate(routes.LISTING_DETAILS, item)}
           />
         )}
@@ -42,9 +47,7 @@ function ListingsScreen({ navigation }) {
 
 const styles = StyleSheet.create({
   screen: {
-    padding: 10,
-    paddingTop: 20,
-
+    padding: 20,
     backgroundColor: colors.light,
   },
 });

@@ -8,7 +8,11 @@ function NewListingButton({ onPress }) {
   return (
     <TouchableOpacity onPress={onPress}>
       <View style={styles.container}>
-        <MaterialCommunityIcons name="cart" color={colors.white} size={40} />
+        <MaterialCommunityIcons
+          name="plus-circle"
+          color={colors.white}
+          size={40}
+        />
       </View>
     </TouchableOpacity>
   );

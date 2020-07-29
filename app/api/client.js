@@ -1,7 +1,7 @@
 import { create } from "apisauce";
 
 const apiClient = create({
-  baseURL: "https://setiabudhi-supermarket.co.id/api",
+  baseURL: "http://192.168.43.19:9000/api",
 });
 
 export default apiClient;
