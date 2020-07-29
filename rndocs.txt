@@ -26,3 +26,7 @@ jika sudah klik npm start
 (untuk form keren ) intall : npm install formil@2.1.4
 
 (untuk validation) install : npm install yup
+
+(untuk mengambil gambar dari libray) install : npm install expo-image-picker
+
+(untuk melakukan permissions acces to the libray) install : npm install expo-permissions
